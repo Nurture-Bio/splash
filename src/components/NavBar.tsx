@@ -26,7 +26,7 @@ export function NavBar() {
         >
           nurture bio
         </a>
-
+        <a href="#contact" className="nav-link">Contact</a>
       </div>
     </nav>
   );
