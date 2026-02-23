@@ -33,7 +33,7 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div className="mt-10" variants={fadeUp} transition={easeOut}>
-          <a href="mailto:hello@nurturebio.com" className="btn-base btn-cyan btn-lg">
+          <a href="mailto:chuck@nurture.bio" className="btn-base btn-cyan btn-lg">
             Get in touch
           </a>
         </motion.div>
