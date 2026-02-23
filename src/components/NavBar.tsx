@@ -27,14 +27,9 @@ export function NavBar() {
           nurture bio
         </a>
 
-        <ul className="nav-links">
-          <li>
-            <a href="#faq" className="nav-link">FAQ</a>
-          </li>
-          <li>
-            <a href="#contact" className="nav-link">Contact</a>
-          </li>
-        </ul>
+        <a href="mailto:hello@nurturebio.com" className="nav-link">
+          Get in touch
+        </a>
       </div>
     </nav>
   );
