@@ -3,17 +3,11 @@ import { HomePage } from "./pages/HomePage.tsx";
 
 export default function App() {
   return (
-    <div className="grain">
+    <div className="grain" style={{ height: "100dvh", overflow: "hidden" }}>
       <NavBar />
-
-      <main>
+      <main style={{ height: "100%" }}>
         <HomePage />
       </main>
-
-      <footer className="container-site footer-site">
-        <span className="label">&copy; {new Date().getFullYear()} Nurture Bio</span>
-        <span className="label">Confidential</span>
-      </footer>
     </div>
   );
 }

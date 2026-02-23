@@ -6,7 +6,7 @@ export function HeroSection() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-full flex items-center justify-center overflow-hidden">
       <DataMesh />
 
       <motion.div
@@ -38,7 +38,10 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      <div className="hero-fade-bottom" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 right-0 container-site flex justify-between pb-6 z-10">
+        <span className="label">&copy; {new Date().getFullYear()} Nurture Bio</span>
+        <span className="label">Confidential</span>
+      </div>
     </section>
   );
 }
