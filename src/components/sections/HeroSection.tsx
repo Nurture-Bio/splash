@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Button } from "../ui/index.ts";
 import { DataMesh } from "../DataMesh.tsx";
 import { fadeUp, staggerContainer, easeOut } from "../../lib/motion.tsx";
 
