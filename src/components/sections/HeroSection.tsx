@@ -16,14 +16,6 @@ export function HeroSection() {
         initial={reduced ? "visible" : "hidden"}
         animate="visible"
       >
-        <motion.p
-          className="label tracking-[0.24em]"
-          variants={fadeUp}
-          transition={easeOut}
-        >
-          Stealth Mode
-        </motion.p>
-
         <motion.h1
           className="display-hero mt-8"
           variants={fadeUp}
