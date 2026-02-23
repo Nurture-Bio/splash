@@ -27,9 +27,6 @@ export function NavBar() {
           nurture bio
         </a>
 
-        <a href="mailto:hello@nurturebio.com" className="nav-link">
-          Get in touch
-        </a>
       </div>
     </nav>
   );

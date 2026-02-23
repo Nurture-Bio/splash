@@ -33,15 +33,9 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div className="mt-10" variants={fadeUp} transition={easeOut}>
-          <Button
-            intent="cyan"
-            size="lg"
-            onClick={() =>
-              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
+          <a href="mailto:hello@nurturebio.com" className="btn-base btn-cyan btn-lg">
             Get in touch
-          </Button>
+          </a>
         </motion.div>
       </motion.div>
 
