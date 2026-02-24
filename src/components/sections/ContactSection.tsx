@@ -11,9 +11,31 @@ interface FormData {
 
 const EMPTY: FormData = { name: "", email: "", message: "" };
 
+async function sendEmail(form: FormData): Promise<void> {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${import.meta.env.VITE_RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "Nurture Bio <onboarding@resend.dev>",
+      to: "chuck@nurture.bio",
+      reply_to: form.email,
+      subject: `Message from ${form.name}`,
+      html: `<p><strong>Name:</strong> ${form.name}</p>
+             <p><strong>Email:</strong> ${form.email}</p>
+             <p><strong>Message:</strong><br>${form.message.replace(/\n/g, "<br>")}</p>`,
+    }),
+  });
+  if (!res.ok) throw new Error("Failed to send");
+}
+
 export function ContactSection() {
   const [form, setForm] = useState<FormData>(EMPTY);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const reduced = useReducedMotion();
 
   const set =
@@ -21,10 +43,18 @@ export function ContactSection() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: replace with Resend API
-    setSent(true);
+    setLoading(true);
+    setError(false);
+    try {
+      await sendEmail(form);
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -64,8 +94,14 @@ export function ContactSection() {
                       className="input resize-none"
                       value={form.message} onChange={set("message")} />
                   </div>
-                  <button type="submit" className="btn-base btn-cyan btn-lg w-full mt-2">
-                    Send
+                  {error && (
+                    <p className="body-dim text-center text-sm">
+                      Something went wrong — try emailing us directly at chuck@nurture.bio
+                    </p>
+                  )}
+                  <button type="submit" disabled={loading}
+                    className="btn-base btn-cyan btn-lg w-full mt-2">
+                    {loading ? "Sending…" : "Send"}
                   </button>
                 </div>
               </motion.form>
