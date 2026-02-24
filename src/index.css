@@ -471,6 +471,14 @@
     outline: none;
     border-bottom-color: var(--color-cyan-dim);
   }
+  .input:-webkit-autofill,
+  .input:-webkit-autofill:hover,
+  .input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-surface-1) inset;
+    -webkit-text-fill-color: var(--color-fg);
+    caret-color: var(--color-fg);
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
   .input-label {
     font-family: var(--font-sans);
