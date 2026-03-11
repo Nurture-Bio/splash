@@ -22,9 +22,9 @@ export function NavBar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="wordmark"
-          aria-label="Nurture Bio home"
+          aria-label="Nurture.bio home"
         >
-          nurture bio
+          nurture.bio
         </a>
         <a href="#contact" className="nav-link">Contact</a>
       </div>

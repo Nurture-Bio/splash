@@ -9,7 +9,7 @@ export default function App() {
         <HomePage />
       </main>
       <footer className="container-site footer-site">
-        <span className="label">&copy; {new Date().getFullYear()} Nurture Bio</span>
+        <span className="label">&copy; {new Date().getFullYear()} Nurture.bio</span>
         <span className="label">Confidential</span>
       </footer>
     </div>

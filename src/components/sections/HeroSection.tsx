@@ -20,7 +20,7 @@ export function HeroSection() {
           variants={fadeUp}
           transition={easeOut}
         >
-          Nurture Bio
+          Nurture<span style={{ color: "var(--color-cyan-brand)" }}>.bio</span>
         </motion.h1>
 
         <motion.p
