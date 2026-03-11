@@ -23,14 +23,6 @@ export function HeroSection() {
           Nurture<span style={{ color: "var(--color-cyan-brand)" }}>.bio</span>
         </motion.h1>
 
-        <motion.p
-          className="body-dim mt-6 prose-narrow"
-          variants={fadeUp}
-          transition={easeOut}
-        >
-          We're building something at the edge of biology. The details stay quiet for now.
-        </motion.p>
-
         <motion.div className="mt-10" variants={fadeUp} transition={easeOut}>
           <a href="#contact" className="btn-base btn-cyan btn-lg">
             Get in touch
